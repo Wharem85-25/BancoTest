@@ -1,0 +1,6 @@
+.button-post {
+	padding-top: 60px;
+	padding-left: 40px;
+	display: flex;
+	justify-content:space-around;
+}

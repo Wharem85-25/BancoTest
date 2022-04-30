@@ -1,0 +1,6 @@
+.content-header {
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+}
+
