@@ -56,7 +56,7 @@ const Header = () => {
 			<Link className="text" to="/chequeraProducto">
       	<MenuItem sx={menu} >Cheques de Producto</MenuItem>
 			</Link>
-			<Link className="text" to="/Cliente">
+			<Link className="text" to="/cliente">
       	<MenuItem sx={menu} >Cliente</MenuItem>
 			</Link>
 			<Link className="text" to="/codigo">

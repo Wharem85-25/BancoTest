@@ -17,16 +17,16 @@ const root = createRoot(container);
 
 root.render(
 	<BrowserRouter>
-	<Routes>
-		<Route path="/" element={<App />} />
-		<Route path="chequera" element={<Chequera />} />
-		<Route path="home" element={<Home />} />
-		<Route path="chequesProducto" element={<ChequesProducto />} />
-		<Route path="cliente" element={<Cliente />} />
-		<Route path="codigo" element={<CodigoTransaccion />} />
-		<Route path="cuenta" element={<Cuenta />} />
-		<Route path="producto" element={<Producto />} />
-		<Route path="transaccion" element={<Transaccion />} />
-	</Routes>
+		<Routes>
+			<Route path="/" element={<App />} />
+			<Route path="chequera" element={<Chequera />} />
+			<Route path="home" element={<Home />} />
+			<Route path="chequeraProducto" element={<ChequesProducto />} />
+			<Route path="cliente" element={<Cliente />} />
+			<Route path="codigo" element={<CodigoTransaccion />} />
+			<Route path="cuenta" element={<Cuenta />} />
+			<Route path="producto" element={<Producto />} />
+			<Route path="transaccion" element={<Transaccion />} />
+		</Routes>
 	</BrowserRouter>
 );

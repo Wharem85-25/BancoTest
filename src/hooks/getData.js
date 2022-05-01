@@ -1,19 +1,23 @@
-import { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-const API = process.env.APICHEQUERA;
-
-const getChequera = () => {
-const [datos, setDatos] = useState([]);
-
-useEffect(() => {
-	fetch(API)
-		.then((response) => {
-			return response.json()
-		})
-		.then((data) => {
-			setDatos(data)
-		})
-}, [])
-
-	return datos;
+const initialState = {
+	dat: [],
 }
+
+const useGetRows = () => {
+	const [state, setState] = useState(initialState)
+
+	const removeRows = (payload) => {
+		setState({
+			...state,
+			dat: state.dat.filter(items => items.id != payload.id),
+		})
+	}
+
+	return {
+		state,
+		removeRows
+	};
+};
+
+export default useGetRows;

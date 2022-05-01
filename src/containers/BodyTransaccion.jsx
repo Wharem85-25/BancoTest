@@ -1,16 +1,16 @@
 import React from 'react';
 import Table from '../components/TableDatos'
-import ButtonPost from '../components/buttons/ButtonPost'
+import ButtonTransaccion from '../components/buttons/ButtonTransaccion'
 import '../assets/styles/BodyTable.css'
 
-const BodyTable = ({datos, columns}) => {
+const BodyTransaccion = ({datos, columns}) => {
 
 	return (
 		<div className="pad">
 			<Table datos={datos} columns={columns} />
-			<ButtonPost />
+			<ButtonTransaccion />
 		</div>
 	);
 };
 
-export default BodyTable;
+export default BodyTransaccion;
