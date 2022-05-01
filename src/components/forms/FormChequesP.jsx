@@ -26,7 +26,6 @@ const FormChequesP = () => {
 		chequeraId: parseInt(chequeraId),
 		productoId: parseInt(productoId),
 		tipoChequeraId: parseInt(tipoChequeraId),
-
 	}
 
 	const fetchData = async ({cantidad, chequeraId, productoId, tipoChequeraId}) => {

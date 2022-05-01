@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import FormCodigo from '../forms/FormCodigo'
+import FormPatch from '../../hooks/FormsPatch'
 import TextField from '@mui/material/TextField';
 import axios from 'axios'
 import '../../assets/styles/ButtonPost.css'
@@ -41,13 +42,16 @@ const button = {
 }
 
 const ButtonCodigo = () => {
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-	const [openDelete, setOpenDelete] = React.useState(false);
+	const [openDelete, setOpenDelete] = useState(false);
   const handleOpenDelete = () => setOpenDelete(true);
   const handleCloseDelete = () => setOpenDelete(false);
 	const [deleteId, setDeleteId] = useState('');
+	const [openPatch, setOpenPatch] = useState(false);
+  const handleOpenPatch = () => setOpenPatch(true);
+  const handleClosePatch = () => setOpenPatch(false);
 
 	const data = {
     id: deleteId
@@ -79,32 +83,22 @@ const ButtonCodigo = () => {
 	return (
 		<div className="button-post">
       <Button sx={buttonPost} variant="contained" onClick={handleOpen}>Create</Button>
-			<Modal
-					open={open}
-					onClose={handleClose}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description"
-				>
+			<Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
 					<Box sx={style}>
-						<FormCodigo />
-					</Box>
-				</Modal>
-			<Button sx={buttonPost} onClick={handleOpenDelete} variant="contained">Delete</Button>
-			<Modal open={openDelete}
-					onClose={handleCloseDelete}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description">
+					<FormCodigo />
+				</Box>
+			</Modal>
+			<Button sx={buttonPost} onClick={handleOpenPatch} variant="contained">Modificar</Button>
+			<Modal open={openPatch} onClose={handleClosePatch} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
 				<Box sx={style} >
-						<TextField
-							id="outlined-number"
-							sx={box}
-							label="id"
-							type="number"
-							onChange={event => setDeleteId(event.target.value)}
-							InputLabelProps={{
-								shrink: true,
-							}}
-						/>
+					<FormPatch.FormPatchCodigo />
+				</Box>
+			</Modal>
+			<Button sx={buttonPost} onClick={handleOpenDelete} variant="contained">Delete</Button>
+			<Modal open={openDelete} onClose={handleCloseDelete} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+				<Box sx={style} >
+					<TextField id="outlined-number" sx={box} label="id" type="number" onChange={event => setDeleteId(event.target.value)}
+							InputLabelProps={{shrink: true}}/>
 					<Button onClick={handleClickDelete} sx={button}>Borrar Codigo</Button>
 				</Box>
 			</Modal>

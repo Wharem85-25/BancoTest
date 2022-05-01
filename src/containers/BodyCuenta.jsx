@@ -7,8 +7,11 @@ const BodyCuenta = ({datos, columns}) => {
 
 	return (
 		<div className="pad">
-			<Table datos={datos} columns={columns} />
+			<div className="content-title">
+				<p className="title-text">Cuenta</p>
+			</div>
 			<ButtonCuenta />
+			<Table datos={datos} columns={columns} />
 		</div>
 	);
 };

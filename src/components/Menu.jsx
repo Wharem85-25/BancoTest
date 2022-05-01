@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import MenuItem from '@mui/material/MenuItem';
@@ -71,6 +71,7 @@ const Header = () => {
 			<Link className="text" to="/transaccion">
       	<MenuItem sx={menu} >Transaccion</MenuItem>
 			</Link>
+      <Outlet />
     </Box>
   );
 

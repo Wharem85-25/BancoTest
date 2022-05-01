@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import FormCuenta from '../forms/FormCuenta'
+import FormPatch from '../../hooks/FormsPatch'
 import TextField from '@mui/material/TextField';
 import axios from 'axios'
 import '../../assets/styles/ButtonPost.css'
@@ -48,6 +49,9 @@ const ButtonPost = () => {
   const handleOpenDelete = () => setOpenDelete(true);
   const handleCloseDelete = () => setOpenDelete(false);
 	const [deleteId, setDeleteId] = useState('');
+	const [openPatch, setOpenPatch] = useState(false);
+  const handleOpenPatch = () => setOpenPatch(true);
+  const handleClosePatch = () => setOpenPatch(false);
 
 	const data = {
     id: deleteId
@@ -78,34 +82,23 @@ const ButtonPost = () => {
 
 	return (
 		<div className="button-post">
-
       <Button sx={buttonPost} variant="contained" onClick={handleOpen}>Create</Button>
-			<Modal
-					open={open}
-					onClose={handleClose}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description"
-				>
-					<Box sx={style}>
-						<FormCuenta />
-					</Box>
-				</Modal>
-			<Button sx={buttonPost} onClick={handleOpenDelete} variant="contained">Delete</Button>
-			<Modal open={openDelete}
-					onClose={handleCloseDelete}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description">
+			<Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+				<Box sx={style}>
+				<FormCuenta />
+				</Box>
+			</Modal>
+			<Button sx={buttonPost} onClick={handleOpenPatch} variant="contained">Modificar</Button>
+			<Modal open={openPatch} onClose={handleClosePatch} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
 				<Box sx={style} >
-						<TextField
-							id="outlined-number"
-							sx={box}
-							label="id"
-							type="number"
-							onChange={event => setDeleteId(event.target.value)}
-							InputLabelProps={{
-								shrink: true,
-							}}
-						/>
+					<FormPatch.FormPatchCuenta />
+				</Box>
+			</Modal>
+			<Button sx={buttonPost} onClick={handleOpenDelete} variant="contained">Delete</Button>
+			<Modal open={openDelete} onClose={handleCloseDelete} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+				<Box sx={style} >
+					<TextField id="outlined-number" sx={box} label="id" type="number" onChange={event => setDeleteId(event.target.value)}
+						InputLabelProps={{shrink: true}}/>
 					<Button onClick={handleClickDelete} sx={button}>Borrar Cuenta</Button>
 				</Box>
 			</Modal>

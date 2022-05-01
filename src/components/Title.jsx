@@ -4,7 +4,7 @@ import '../assets/styles/Title.css'
 const Title = () => {
 	return (
 		<div className="content-title">
-			<p className="title">Banco America</p>
+			<p className="title">Banco Test</p>
 		</div>
 	);
 };

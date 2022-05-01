@@ -7,8 +7,11 @@ const BodyTableCliente = ({datos, columns}) => {
 
 	return (
 		<div className="pad">
-			<Table datos={datos} columns={columns} />
+			<div className="content-title">
+				<p className="title-text">Cliente</p>
+			</div>
 			<ButtonCliente />
+			<Table datos={datos} columns={columns} />
 		</div>
 	);
 };
