@@ -4,7 +4,7 @@ El siguiente proyecto fue realizado con React, consumiento el API del bancoTest 
 
 ## Instalacion
 
-Esto instalara todas las dependencias del proyecto. Ahora para poder visualizar el proyecto escribimos el siguiente comando.
+Esto instalara todas las dependencias del proyecto.
 
 
 ```bash
